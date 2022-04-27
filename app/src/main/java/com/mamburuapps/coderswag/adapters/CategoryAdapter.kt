@@ -26,6 +26,8 @@ class CategoryAdapter(context: Context, categories: List<Category>): BaseAdapter
         return 0
     }
 
+
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val categoryView: View
