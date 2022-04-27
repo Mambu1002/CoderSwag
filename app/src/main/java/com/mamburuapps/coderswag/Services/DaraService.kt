@@ -30,7 +30,8 @@ object DaraService {
         Product("Devslopes Shirt Gray", "12$", "shirt1"),
         Product("Devslopes Shirt  Red", "14$", "shirt2"),
         Product("Devslopes Shirt  Blue", "15$", "shirt3"),
-        Product("Devslopes Shirt  Black", "19$", "shirt4")
+        Product("Devslopes Shirt  Black", "19$", "shirt4"),
+        Product("Devslopes Shirt  BlackRed", "19$", "shirt5"),
 
     )
 
