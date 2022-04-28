@@ -3,29 +3,34 @@ package com.mamburuapps.coderswag.controller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mamburuapps.coderswag.R
 import com.mamburuapps.coderswag.Services.DaraService
 import com.mamburuapps.coderswag.adapters.CategoryAdapter
+import com.mamburuapps.coderswag.adapters.categoryRecycleAdapter
 import com.mamburuapps.coderswag.model.Category
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var adapter: CategoryAdapter
+    lateinit var adapter: categoryRecycleAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        adapter = CategoryAdapter(this, DaraService.categories)
+        adapter = categoryRecycleAdapter(this, DaraService.categories)
         categoryListView.adapter = adapter
 
-     categoryListView.setOnItemClickListener { adapterView, view, i, l ->
+        val layoutManager = LinearLayoutManager(this)
+        categoryListView.layoutManager= layoutManager
 
-         val category = DaraService.categories[i]
-         Toast.makeText(this, "You clicked on the ${category.title}", Toast.LENGTH_SHORT).show()
+        categoryListView.setHasFixedSize(true)
 
-     }
+
+
+
     }
 
 
