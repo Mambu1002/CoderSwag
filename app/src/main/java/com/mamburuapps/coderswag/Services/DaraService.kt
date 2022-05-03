@@ -36,4 +36,17 @@ object DaraService {
 
     )
 
+    val digitalGoods = listOf<Product>()
+
+
+    fun getProduct (category: String): List<Product> {
+        return  when (category) {
+            "SHIRTS" -> shirts
+            "HATS" -> hats
+            "HOODIES" -> hoodies
+            else -> digitalGoods
+        }
+
+    }
+
 }
